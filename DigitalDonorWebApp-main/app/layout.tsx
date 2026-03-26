@@ -1,16 +1,6 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 // UPDATED: This changes your browser tab title and logo!
 export const metadata: Metadata = {
@@ -28,7 +18,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        style={
+          {
+            "--font-geist-sans": "Arial, Helvetica, sans-serif",
+            "--font-geist-mono": '"Courier New", Courier, monospace',
+          } as CSSProperties
+        }
+      >
         {children}
       </body>
     </html>

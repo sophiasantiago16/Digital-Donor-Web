@@ -14,13 +14,16 @@ export default function LoginScreen() {
 
   useEffect(() => {
     setIsMounted(true);
-  }, []);
+    router.prefetch('/home');
+    router.prefetch('/signup');
+    router.prefetch('/forgot-password');
+  }, [router]);
 
-  const handleNavigate = (path: string) => {
+  const handleNavigate = (path: string, delayMs = 300) => {
     setIsExiting(true);
     setTimeout(() => {
       router.push(path);
-    }, 300);
+    }, delayMs);
   };
 
   return (
@@ -52,16 +55,16 @@ export default function LoginScreen() {
           style={styles.inputText} // Added black text color here
         />
 
-        <Pressable onPress={() => handleNavigate('/forgot')} style={styles.forgotPasswordContainer}>
+        <Pressable onPress={() => handleNavigate('/forgot-password', 150)} style={styles.forgotPasswordContainer}>
           <Text style={styles.forgotText}>Forgot Password?</Text>
         </Pressable>
 
-        <GradientButton title="Login" onPress={() => handleNavigate('/home')} />
+        <GradientButton title="Login" onPress={() => handleNavigate('/home', 0)} />
 
         <View style={styles.footerContainer}>
           <View style={styles.line} />
           <Text style={styles.footerText}>Don't have an account? </Text>
-          <Pressable onPress={() => handleNavigate('/signup')}>
+          <Pressable onPress={() => handleNavigate('/signup', 150)}>
             <Text style={styles.signupText}> Sign up here!</Text>
           </Pressable>
           <View style={styles.line} />

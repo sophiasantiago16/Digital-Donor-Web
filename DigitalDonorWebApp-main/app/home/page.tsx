@@ -712,7 +712,7 @@ const styles = StyleSheet.create({
   emptyStateText: { fontSize: 18, color: '#888' },
   overlayContainer: { position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', zIndex: 1200 } as any,
   backdrop: { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(255, 255, 255, 0.45)', backdropFilter: 'blur(6px)', transition: 'opacity 0.3s ease-in-out' } as any,
-  sidebar: { position: 'absolute', right: 0, width: 450, backgroundColor: '#FFFFFF', height: '100%', boxShadow: '-10px 0px 30px rgba(0, 0, 0, 0.1)', display: 'flex', flexDirection: 'column', transition: 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)' } as any,
+  sidebar: { position: 'absolute', top: 0, right: 0, bottom: 0, width: 450, backgroundColor: '#FFFFFF', borderTopLeftRadius: 36, borderBottomLeftRadius: 36, overflow: 'hidden', boxShadow: '-10px 0px 30px rgba(0, 0, 0, 0.1)', display: 'flex', flexDirection: 'column', transition: 'transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)' } as any,
   sidebarHeader: { flexDirection: 'row', alignItems: 'center', padding: 30, borderBottomWidth: 1, borderBottomColor: '#F0F0F0' },
   cartIconCircle: { width: 50, height: 50, borderRadius: 25, backgroundColor: '#FFE6E6', justifyContent: 'center', alignItems: 'center', marginRight: 15 },
   sidebarTitle: { fontSize: 20, fontWeight: 'bold', color: '#6A1B1B', marginBottom: 2 },
